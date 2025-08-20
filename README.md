@@ -19,7 +19,7 @@ It includes task management, team overview, and analytics widgets.
 
 ## Installation
 ```bash
-git clone <repo-url>
+git clone https://github.com/ParasuramanA/Responsive-Css-Grid-Layout.git
 cd workspace-dashboard
 npm install
 npm start

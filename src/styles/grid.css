@@ -1,0 +1,242 @@
+:root {
+    --bg: #0f1724;
+    --card-bg: #ffffff;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --glass: rgba(255, 255, 255, 0.04);
+    --radius: 12px;
+    --gap: 1.25rem;
+    --container-w: 1180px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(180deg, #071028 0%, #0b1220 100%);
+    color: #e6eef8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .app {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    width: 100%;
+    max-width: var(--container-w);
+  }
+  .header {
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 18px;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--accent), #7dd3fc);
+    color: #04263b;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .nav {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap; /*  wrap nav items too */
+  }
+  .nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .search {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: inherit;
+    min-width: 220px;
+  }
+  .filter {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--gap);
+  }
+  .card {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.02)
+    );
+    border-radius: var(--radius);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  .card-hero {
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    background-image: linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.12),
+      rgba(125, 211, 252, 0.06)
+    );
+    font-weight: 700;
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--card-bg);
+  }
+  .card .meta {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+  }
+  .muted-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+  .empty-state {
+    padding: 40px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    text-align: center;
+    color: var(--muted);
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 520px) {
+    .app {
+      padding: 20px 12px;
+    }
+    .logo {
+      width: 44px;
+      height: 44px;
+      font-size: 16px;
+    }
+    .card-hero {
+      height: 120px;
+    }
+    .card {
+      padding: 12px;
+    }
+    .search {
+      min-width: 140px;
+    }
+  }
+  
+  /* Desktop tweaks */
+  @media (min-width: 1200px) {
+    .card-hero {
+      height: 180px;
+    }
+  }
+  
+
+  @media (max-width: 640px) {
+    .header {
+      flex-direction: column;   /*  stack brand and nav */
+      align-items: flex-start;  /* align left */
+      gap: 12px;
+    }
+  
+    .title {
+      font-size: 16px; /* smaller font on narrow screens */
+    }
+  
+    .lead {
+      font-size: 12px;
+    }
+  
+    .nav a {
+      font-size: 13px;
+    }
+  }
